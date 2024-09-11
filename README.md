@@ -6,6 +6,6 @@ The quick brown fox jumps over the lazy dog.
 
 My favorite colors:
 
-- blue 
-- green
-- black
+- Blue 
+- Green
+- Black
