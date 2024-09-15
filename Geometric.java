@@ -1,6 +1,6 @@
 public class Geometric
 {
-    public static void main (String args[])
+    public static void main(String args[])
     {
         System.out.println("Geometric Sequence");
         System.out.println();
