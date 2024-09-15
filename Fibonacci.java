@@ -16,10 +16,10 @@ public class Fibonacci
         
         for (int i = 1; i < count; i++)
         {
-            int next = a + b;
+            int c = a + b;
             System.out.println(next);
             a=b;
-            b=next;
+            b=c;
         }
     }
            
