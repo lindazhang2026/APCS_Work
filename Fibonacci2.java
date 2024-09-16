@@ -14,7 +14,8 @@ public class Fibonacci2
             System.out.println(term2); // then print out second value of 1 when there is more than 1 term
         }
         
-        for (int i=2; i<count; i++) // i strictly less than count to get 30 outputs
+        for (int i=0; i<count-2; i++) // int i=2 in this case doesn't reference the integer itself being inputed into the loop RATHER it stands for the number of repetition it has gone through and COUNT would be how many more reps you still need
+            
         {
             term += term2; // update first
             System.out.println(term); // then print term
