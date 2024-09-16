@@ -1,3 +1,4 @@
+// memorize!
 public class Multiplesof4
 {
     public static void main(String args[])
@@ -8,9 +9,7 @@ public class Multiplesof4
         
         for (int i=1; i<=count; i++)
         {
-            {
                 System.out.println(4 * i);
-            }
         }
     }
 }
