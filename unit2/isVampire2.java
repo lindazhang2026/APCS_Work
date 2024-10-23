@@ -3,6 +3,7 @@ public class isVampire2
 {
    public static void main (String[] args)
    {
+    // i know this is where functions are tested but since this is not a unit test is there still a need for this?
    }
    public static boolean isVampire2(float hour, boolean awake)
         {
