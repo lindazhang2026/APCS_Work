@@ -16,7 +16,7 @@ public class stringMatch
         }
         return count;
     }
-    public static void teststringMatch(String a, String b, int expected) // DO NOT COMPLICATE THINGS BY ADDING A DECLARATION IN THIS LINE!!!
+    public static void teststringMatch(String a, String b, int expected) // DO NOT COMPLICATE THINGS BY ADDING A DECLARATION IN THIS LINE!!! Instead add 'void'
     {
         int result = stringMatch(a,b);
         
