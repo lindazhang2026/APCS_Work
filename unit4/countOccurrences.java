@@ -3,13 +3,13 @@ public class countOccurrences
     public static int countOccurrences(String str, String part)
     {
         int count = 0;
-        for (int i=0; i<str.length() - part.length(); i++)
-        //if str = "hello" & part = "ll" -> 1
-        //str.length()=5; part.length()=2 
-        //5-2=3 -> (0,3) -> indicies 0,1,2 -> hel
-        //I'm confused.
+        for (int i=0; i<=str.length()-part.length(); i++)
         {
-            if (str.substring(i,i+part.length()).equals(part))
+        //if n = str.length()-part.length() -> i<=n
+        // -> (0,n+1), yes?
+            if (str.substring(i,i+part.length()).equals(part)) //i+part.length() explained:
+                                                               //if i=2 for str "hello"
+                                                               //(2,4) would be "ll"
             {
                 count+=1;
             }
