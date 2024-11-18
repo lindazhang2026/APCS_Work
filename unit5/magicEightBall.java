@@ -1,4 +1,4 @@
-public class magicEightBall
+public class magicEightBall //Always capitalize class titles but camel case variable names
 {
     private final String[] replies =
     {
