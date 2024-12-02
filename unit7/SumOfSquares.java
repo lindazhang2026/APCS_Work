@@ -3,7 +3,7 @@ public class SumOfSquares
     public static double SumOfSquares(double[] nums)
     {
         double sum = 0;
-        for (int i=0; i<nums.length; i++)
+        for (int i=0; i<nums.length; i++) // keep as int i=0 not double
         {
             sum += nums[i]*nums[i];
         }
