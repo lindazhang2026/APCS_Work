@@ -11,7 +11,7 @@ public class goodDeal
             return false;
         }
     }
-    public static void testgoodDeal(double originalPrice, double salePrice, boolean expected)
+    public static void testgoodDeal(double originalPrice, double salePrice, boolean expected) // no boolean here
     {
         boolean result = goodDeal(originalPrice, salePrice);
         

@@ -24,8 +24,8 @@ public class frontTimes
             
         System.out.println("String: " + str + "; n: " + n + "; Expected: " + expected + "; Result: " + result);
         
-        if (result.equals(expected))
-            System.out.println("Correct!");
+        if (result.equals(expected)) //remember.equals for strings
+            System.out.println("Correct!"); 
         else
             System.out.println("Incorrect!");
         
