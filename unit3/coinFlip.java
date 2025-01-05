@@ -12,7 +12,7 @@ public class coinFlip
         {
             return "Tails";
         }
-        
+        //else
         return "";
     }
     public static void main(String[ ] args)

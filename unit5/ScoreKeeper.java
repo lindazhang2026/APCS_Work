@@ -2,7 +2,7 @@ public class ScoreKeeper
 {
     public Scorekeeper()
     {
-        score = 0;
+        Score = 0;
     }
     
     public void scoreNormal()
