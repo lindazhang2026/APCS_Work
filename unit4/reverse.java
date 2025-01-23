@@ -4,7 +4,7 @@ public class reverse
     {
         String result = "";
         for (int i=str.length()-1; i>=0; i--) //you start with the last character in the index
-        // i >= 0 bc it will loop as long as nonnegative
+        // i >= 0 bc loop will run until i reaches 0th index
         {
             result += str.substring(i,i+1); //just add i 
         }
