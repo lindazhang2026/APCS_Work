@@ -67,10 +67,67 @@ void keyPressed() {
             gameState =='game';
         }
     } else if (gameState == "game") {
-        drawGame();
         if (key == 'b' || key == 'B') {
-            
+            startSpin();
         }
+    }
+}
+public void drawStart() {
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Welcome to Coin Collector", width / 2, height / 4);
+    textSize(24);
+    text("Press Enter to Learn the Rules", width / 2, height / 2);
+}
+
+public void drawRules() {
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Rules of Coin Collector", width / 2, height / 2);
+    textSize(24);
+    text("Press Enter to Start the Game", width / 2, height / 2);
+    text("Press 'b' to Spin the Slot Machine", width / 2, height / 2);
+}
+public void drawGame() {
+    image(background_image, 0, 0);
+    textSize(20);
+    test("Coins: " + coins, width / 2, 30);
+    
+    drawSlotColumn(c1x_position, c1_index);
+    drawSlotColumn(c2x_position, c2_index);
+    
+    image(run_button, width / 2 - run_button.width / 2, height - 150);
+}
+public void drawSlotColumn(float x, int index) {
+    for (int i=0; i<3; i++)
+    {
+        float y = image_1Y + i * 110;
+        image(images[(index + i) % images.length], x, y);
+    }
+}
+public void startSpin() {
+    start_time_of_spin = millis();
+    c1_index = (int) random(0, images.length);
+    c2_index = (int) random(0, images.length);
+}
+public void updateSpin() {
+    int elapsedTime = millis() - spinStartTime;
+    if (elapsedTime < spinDuration)
+    {
+        column_1_index = (column_1_index + 1) % images.length;
+        column_2_index = (column_2_index + 1) % images.length; 
+    }
+    else {
+        check_for_match();
+    }
+}
+
+public void check_for_match() {
+    if (images[c1_index].equals(images[c1_index + 1 % 3]) && images[c2_index].equals(images[c2_index + 1 % 3])) {
+        coins += 10000;
+        text("You won the jackpot!!", width / 2, height / 2);
+    } else {
+        text("Unfortunately, you lost.", width / 2, height / 2);
     }
 }
 
