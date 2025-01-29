@@ -14,7 +14,7 @@ float c2x_position = 350;
 float c1y_position = 100;
 float c2y_position = 100;
 
-int time_of_spin = 2000; // 2000 ms = 2 s
+int spin_time = 2000; // 2000 ms = 2 s
 int start_time_of_spin = 0;
 
 PImage image_1;
@@ -50,21 +50,17 @@ public void draw(){
         drawRules();
     } else if (gameState == "game") {
         drawGame();
-        
-    } if (coins == 10000) {
-        drawEnd();
-    }  
 }
 void keyPressed() {
     if (gameState == "welcome") {
         if (keyCode == ENTER){
-            gameState == "how to play";
+            gameState = "how to play";
         }
     } else if (gameState == "how to play") {
         if (key == 'a' || key == 'A') {
-            gameState == "welcome";
+            gameState = "welcome";
         } else if (keyCode == ENTER) {
-            gameState =='game';
+            gameState = "game";
         }
     } else if (gameState == "game") {
         if (key == 'b' || key == 'B') {
@@ -91,7 +87,7 @@ public void drawRules() {
 public void drawGame() {
     image(background_image, 0, 0);
     textSize(20);
-    test("Coins: " + coins, width / 2, 30);
+    text("Coins: " + coins, width / 2, 30);
     
     drawSlotColumn(c1x_position, c1_index);
     drawSlotColumn(c2x_position, c2_index);
@@ -112,7 +108,7 @@ public void startSpin() {
 }
 public void updateSpin() {
     int elapsedTime = millis() - spinStartTime;
-    if (elapsedTime < spinDuration)
+    if (elapsedTime < spin_time)
     {
         column_1_index = (column_1_index + 1) % images.length;
         column_2_index = (column_2_index + 1) % images.length; 
