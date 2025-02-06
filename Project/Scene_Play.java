@@ -4,16 +4,16 @@ public class Scene_Play implements Scene {
     private PApplet p;
     private Game game;  
     PImage[] images = new PImage[3];
+    images[0] = loadImage("bunny.jpg"); 
+    images[1] = loadImage("fox.png");
+    images[2] = loadImage("bear.png");
+    images[0].resize(100, 100);
+    images[1].resize(100, 100);
+    images[2].resize(100, 100);
 
     public Scene_Play(PApplet p, Game game) {
         this.p = p;
         this.game = game;
-        images[0] = loadImage("bunny.jpg"); 
-        images[1] = loadImage("fox.png");
-        images[2] = loadImage("bear.png");
-        images[0].resize(100, 100);
-        images[1].resize(100, 100);
-        images[2].resize(100, 100);
     }
 
     public void display() {
