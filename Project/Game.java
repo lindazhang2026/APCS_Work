@@ -26,14 +26,14 @@ public class Game extends PApplet {
     }
 
     public void setup() {
-        images[0] = loadImage("bunny.png"); 
+        images[0] = loadImage("bunny.jpg"); 
         images[1] = loadImage("fox.webp");
         images[2] = loadImage("bear.png");
         images[0].resize(100, 100);
         images[1].resize(100, 100);
         images[2].resize(100, 100);
 
-        background_image = loadImage("background.gif");
+        background_image = loadImage("background.jpg");
         background_image.resize(background_image.width / 2, background_image.height / 2);
         run_button = loadImage("start.png");
         run_button.resize(run_button.width / 2, run_button.height / 2);
