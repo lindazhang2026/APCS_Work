@@ -22,16 +22,19 @@ public class Scene_Start implements Scene {
         if (game.gameState.equals("welcome")) {
             if (p.keyCode == PApplet.ENTER) {  
                 game.gameState = "how to play";
+                System.out.println("Game state: " + game.gameState);
             }
         } else if (game.gameState.equals("how to play")) {
             if (p.key == 'a' || p.key == 'A') {
                 game.gameState = "welcome";
+                System.out.println("Game state: " + game.gameState);
             }
         } else if (p.keyCode == PApplet.ENTER) {
             game.gameState = "game";
+            System.out.println("Game state: " + game.gameState);
         } else if (game.gameState.equals("game")) {
             if (p.key == 'b' || p.key == 'B') {
-                game.startSpin();
+                game.startSpin(); 
             }
         }
     }

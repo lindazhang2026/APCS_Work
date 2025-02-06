@@ -14,6 +14,7 @@ public class Scene_Play implements Scene {
         p.fill(0, 255, 0);
         p.ellipse(p.width / 2, p.height / 2, 50, 50);
         drawGame();
+        updateSpin();
     }
 
     public void drawGame() {

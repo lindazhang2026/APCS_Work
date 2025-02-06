@@ -26,7 +26,6 @@ public class Game extends PApplet {
     }
 
     public void setup() {
-        size(600, 600);
         images[0] = loadImage("data/bunny.png"); 
         images[1] = loadImage("data/fox.webp");
         images[2] = loadImage("data/bear.png");
