@@ -43,8 +43,8 @@ public class Game extends PApplet {
         fill(255);
 
         scenes = new ArrayList<Scene>();
-        scenes.add(new Scene_Start(this));
-        scenes.add(new Scene_Play(this));
+        scenes.add(new Scene_Start(this, this)); //passes both papplet and game
+        scenes.add(new Scene_Play(this, this));
         scenes.add(new Scene_End(this));
 
         current = 0;
@@ -61,5 +61,9 @@ public class Game extends PApplet {
 
     public static void main(String[] args) {
         PApplet.main("Game");
+    }
+    public void startSpin()
+    {
+        System.out.println("Spin started!");  
     }
 }

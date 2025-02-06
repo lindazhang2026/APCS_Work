@@ -10,6 +10,7 @@ public class Scene_Start implements Scene {
     }
 
     public void display() {
+        p.background(0);
         p.textSize(32);
         p.textAlign(PApplet.CENTER, PApplet.CENTER);  
         p.text("Welcome to Coin Collector", p.width / 2, p.height / 4);
