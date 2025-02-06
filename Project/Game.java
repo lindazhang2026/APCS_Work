@@ -1,23 +1,23 @@
 import processing.core.*;
 import java.util.*;
 
-String gameState = "welcome";
-int coins = 0;
-PImage run_button;
-PImage background_image;
-PImage[] images = new PImage[3];
-int c1_index = 0; //column 1
-int c2_index = 0; //column 2; 2 columns 3 images each
-
-float c1x_position = 150;
-float c2x_position = 350;
-float c1y_position = 100;
-float c2y_position = 100;
-
-int spin_time = 2000; // 2000 ms = 2 s
-int start_time_of_spin = 0;
-
 public class Game extends PApplet {
+    int coins = 0;
+    PImage run_button;
+    PImage background_image;
+    PImage[] images = new PImage[3];
+    int c1_index = 0; //column 1
+    int c2_index = 0; //column 2; 2 columns 3 images each
+
+    float c1x_position = 150;
+    float c2x_position = 350;
+    float c1y_position = 100;
+    float c2y_position = 100;
+
+    int spin_time = 2000; // 2000 ms = 2 s
+    int start_time_of_spin = 0;
+    
+    String gameState = "welcome";
     private ArrayList<Scene> scenes;
     private int current;
 

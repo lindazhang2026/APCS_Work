@@ -14,6 +14,6 @@ public class Scene_End implements Scene {
     }
 
     public void keyPressed() {
-        // Add logic for key presses in the end scene if necessary
+        
     }
 }
