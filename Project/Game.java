@@ -2,6 +2,9 @@ import processing.core.*;
 import java.util.*;
 
 public class Game extends PApplet {
+    final int MENU = 0;
+    final int GAMESTART = 1;
+    final int GAMEOVER = 2;
     int coins = 0;
     int c1_index = 0; //column 1
     int c2_index = 0; //column 2; 2 columns 3 images each
@@ -14,7 +17,7 @@ public class Game extends PApplet {
     int spin_time = 2000; // 2000 ms = 2 s
     int start_time_of_spin = 0;
     
-   // String gameState = "welcome";
+    private int gameState;
     private ArrayList<Scene> scenes;
     private int current;
 
@@ -27,11 +30,12 @@ public class Game extends PApplet {
         fill(255);
 
         scenes = new ArrayList<Scene>();
-        scenes.add(new Scene_Start(this, this)); //passes both papplet and game
-        scenes.add(new Scene_Play(this, this));
-        scenes.add(new Scene_End(this));
-
-        current=0;
+        scenes.add(new Scene_Start(this, this)); //start scene
+        scenes.add(new Scene_Play(this, this)); //play scene
+        scenes.add(new Scene_End(this)); //end scene
+        
+        gameState = MENU; // start in MENU state
+        current = 0;
     }
 
     public void draw() {
@@ -41,11 +45,25 @@ public class Game extends PApplet {
 
     public void keyPressed() {
         scenes.get(current).keyPressed();
+        
+        if (gameState == MENU && key == ENTER)
+        {
+            gameState = GAMESTART;
+            current =1;
+            System.out.println("Game Starting...");
+        }
+        else if (gameState == GAMEOVER && key == ENTER)
+        {
+            gameState = MENU;
+            current =0;
+            System.out.println("Game over. Going back to menu...");
+        }
     }
-
+    
     public static void main(String[] args) {
         PApplet.main("Game");
     }
+    
     public void startSpin()
     {
         System.out.println("Spin started!");  
