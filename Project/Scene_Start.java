@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Scene_Start implements Scene {
     private PApplet p;

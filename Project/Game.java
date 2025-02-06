@@ -2,6 +2,8 @@ import processing.core.*;
 import java.util.*;
 
 public class Game extends PApplet {
+    PImage background_image; 
+    PImage run_button;
     final int MENU = 0;
     final int GAMESTART = 1;
     final int GAMEOVER = 2;
@@ -17,9 +19,9 @@ public class Game extends PApplet {
     int spin_time = 2000; // 2000 ms = 2 s
     int start_time_of_spin = 0;
     
-    private int gameState;
+    int gameState;
     private ArrayList<Scene> scenes;
-    private int current;
+    int current;
 
     public void settings() {
         size(1000, 1000);
@@ -28,24 +30,29 @@ public class Game extends PApplet {
     public void setup() {
         noStroke();
         fill(255);
+        
+        background_image = loadImage("background.jpg");
+        run_button = loadImage("start.png");
 
         scenes = new ArrayList<Scene>();
         scenes.add(new Scene_Start(this, this)); //start scene
         scenes.add(new Scene_Play(this, this)); //play scene
-        scenes.add(new Scene_End(this)); //end scene
+        scenes.add(new Scene_End(this, this)); //end scene
         
         gameState = MENU; // start in MENU state
         current = 0;
     }
 
-    public void draw() {
+    public void draw()
+    {
         background(0);
         scenes.get(current).display();
+    }
 
     public void keyPressed()
     {
-       current++;
-       if (current >= scenes.size())
+        current++;
+        if (current >= scenes.size())
            current = 0;
     }
     
@@ -56,5 +63,13 @@ public class Game extends PApplet {
     public void startSpin()
     {
         System.out.println("Spin started!");  
+    }
+    
+    public int getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(int current) {
+        this.current = current;
     }
 }

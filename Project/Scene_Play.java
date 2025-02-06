@@ -28,11 +28,11 @@ public class Scene_Play implements Scene {
     }
 
     public void drawGame() {
-        p.image(game.background_image, 0, 0); 
         p.textSize(20);
         p.text("Coins: " + game.coins, p.width / 2, 30);
         drawSlotColumn(game.c1x_position, num_1);
         drawSlotColumn(game.c2x_position, num_2);
+        p.image(game.background_image, 0, 0); 
         p.image(game.run_button, p.width / 2 - game.run_button.width / 2, p.height - 150);
     }
 
