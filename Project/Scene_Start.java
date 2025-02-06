@@ -41,13 +41,13 @@ public class Scene_Start implements Scene {
                 game.gameState = game.GAMESTART;
                 System.out.println("Game starting...");
             }
-        else if (game.gameState == game.GAMEOVER) {
+        }
+        /*else if (game.gameState == game.GAMEOVER) {
             if (p.keyCode == PApplet.ENTER) {
                 game.gameState = game.MENU;
                 game.current = 0;
                 System.out.println("Game over. Returning to menu...");
-            }
-        }
-    }
-} 
+            }*/   
+    } 
+}
 

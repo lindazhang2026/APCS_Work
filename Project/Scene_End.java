@@ -13,7 +13,18 @@ public class Scene_End implements Scene {
         p.ellipse(p.width / 2, p.height / 2, 50, 50);
     }
 
-    public void keyPressed() {
-        
+    public void keyPressed()
+    {
+        if (game.gameState == game.GAMEOVER)
+        {
+            if (p.keyCode == PApplet.ENTER)
+            {
+                game.gameState = game.MENU;
+                game.current = 0;
+                System.out.println("Game over. Returning to menu...");    
+            }
+        }
+            
     }
+        
 }

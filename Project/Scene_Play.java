@@ -39,7 +39,9 @@ public class Scene_Play implements Scene {
     public void drawSlotColumn(float x, int index) {
         for (int i = 0; i < 3; i++) {
             float y = game.c1y_position + i * 110;
-            p.text(num, x, y); //this displays the numbers
+            p.text(num_1, x, y); //this displays the numbers
+            p.text(num_2, x, y);
+            p.text(num_3, x, y);
         }
     }
 

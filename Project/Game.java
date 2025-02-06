@@ -41,23 +41,12 @@ public class Game extends PApplet {
     public void draw() {
         background(0);
         scenes.get(current).display();
-    }
 
-    public void keyPressed() {
-        scenes.get(current).keyPressed();
-        
-        if (gameState == MENU && key == ENTER)
-        {
-            gameState = GAMESTART;
-            current =1;
-            System.out.println("Game Starting...");
-        }
-        else if (gameState == GAMEOVER && key == ENTER)
-        {
-            gameState = MENU;
-            current =0;
-            System.out.println("Game over. Going back to menu...");
-        }
+    public void keyPressed()
+    {
+       current++;
+       if (current >= scenes.size())
+           current = 0;
     }
     
     public static void main(String[] args) {
