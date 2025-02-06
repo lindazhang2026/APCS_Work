@@ -3,10 +3,16 @@ import processing.core.PApplet;
 public class Scene_Start implements Scene {
     private PApplet p;
     private Game game;  
+    PImage run_button;
+    PImage background_image;
 
     public Scene_Start(PApplet p, Game game) {
         this.p = p;
         this.game = game;  
+        background_image = loadImage("background.jpg");
+        background_image.resize(background_image.width / 2, background_image.height / 2);
+        run_button = loadImage("start.png");
+        run_button.resize(run_button.width / 2, run_button.height / 2);
     }
 
     public void display() {
@@ -18,7 +24,7 @@ public class Scene_Start implements Scene {
         p.text("Press Enter to Learn the Rules", p.width / 2, p.height / 2);
     }
 
-    public void keyPressed() {
+    /*public void keyPressed() {
         if (game.gameState.equals("welcome")) {
             if (p.keyCode == PApplet.ENTER) {  
                 game.gameState = "how to play";
@@ -38,4 +44,5 @@ public class Scene_Start implements Scene {
             }
         }
     }
-}
+} */
+
