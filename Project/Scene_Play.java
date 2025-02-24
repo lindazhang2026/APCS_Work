@@ -24,7 +24,7 @@ public class Scene_Play implements Scene {
         p.fill(0, 255, 0);
         p.ellipse(p.width / 2, p.height / 2, 50, 50);
         drawGame();
-        updateSpin();
+       // updateSpin();
     }
 
     public void drawGame() {
@@ -44,7 +44,7 @@ public class Scene_Play implements Scene {
             p.text(num_3, x, y);
         }
     }
-
+/*
     public void startSpin() {
         game.start_time_of_spin = p.millis();
         num_1 = (int) p.random(1,4); // 3 slots with random numbers between 1 and 3
@@ -80,4 +80,5 @@ public class Scene_Play implements Scene {
         }
                 
     }
+    */
 }

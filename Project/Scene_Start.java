@@ -6,6 +6,7 @@ public class Scene_Start implements Scene {
     private Game game; // object game inside Game class
     PImage run_button;
     PImage background_image;
+    float buttonX, buttonY, buttonWidth, buttonHeight;
 
     public Scene_Start(PApplet p, Game game) {
         this.p = p;
@@ -24,16 +25,21 @@ public class Scene_Start implements Scene {
             run_button.resize(run_button.width / 2, run_button.height / 2);
         }
     }
+        
+        buttonX = p.width / 2 - run_button.width / 2;
+        buttonY = p.height / 2 + 50;
+        buttonWidth = run_button.width;
+        buttonHeight = run_button.height;
 
     public void display() {
         p.background(0);
         p.image(background_image, 0, 0); // background img
-        p.image(run_button, p.width / 2 - run_button.width / 2, p.height / 2 + 50); // button
+        p.image(run_button, buttonX, buttonY); // button
         p.textSize(32);
         p.textAlign(PApplet.CENTER, PApplet.CENTER);  
         p.text("Welcome to Coin Collector", p.width / 2, p.height / 4);
         p.textSize(24);
-        p.text("Press Enter to Learn the Rules", p.width / 2, p.height / 2);
+        p.text("Click the button to Start", p.width / 2, p.height / 2);
     }
 
     public void keyPressed() {
@@ -43,12 +49,24 @@ public class Scene_Start implements Scene {
                 System.out.println("Game starting...");
             }
         }
+    }
+    public void mousePressed()
+    {
+        if (p.mouseX > buttonX && p.mouseX < buttonX + buttonWidth && 
+            p.mouseY > buttonY && p.mouseY < buttonY + buttonHeight) {
+            // If inside the button, change the game state
+            game.gameState = game.GAMESTART; // Change game state to start the game
+            game.current = 1; // Move to the play scene
+            System.out.println("Game Starting...");
+        }
+    }
+      
         /*else if (game.gameState == game.GAMEOVER) {
             if (p.keyCode == PApplet.ENTER) {
                 game.gameState = game.MENU;
                 game.current = 0;
                 System.out.println("Game over. Returning to menu...");
             }*/   
-    } 
+
 }
 
