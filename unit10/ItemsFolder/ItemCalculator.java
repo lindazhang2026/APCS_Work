@@ -18,14 +18,14 @@ public class ItemCalculator
            total += item.getPrice();
        }
        
-       return total/item.size(); 
+       return total/items.size(); 
    }
    public String mostExpensiveItem(ArrayList<Item> items)
    {
-       Item MostExpensiveItem = items.get(0); // bc the ArrayList items has both floats and Strings, you have do specify type Item instead of float for this variable in order for code to run
+       Item MostExpensiveItem = items.get(0); // they want you to use the class name bc you're literally getting something from the class
        for (Item item : items)
        {
-           if (item.getPrice() > MostExpensiveItem)
+           if (item.getPrice() > MostExpensiveItem.getPrice())
            {
                MostExpensiveItem = item;
            }

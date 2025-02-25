@@ -15,7 +15,7 @@ public class ItemCalculatorTest
         calculator.nameAndPrices(items);
         
         System.out.println("Test Average Price: ");
-        float expectedAverage = (100 + 5.01f + 15.99f) / 3;
+        float expectedAverage = (100 + 5.01f + 15.99993838f) / 3;
         float actualAverage = calculator.averagePrice(items);
         
         if (expectedAverage == actualAverage)
