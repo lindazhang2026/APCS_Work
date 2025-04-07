@@ -1,4 +1,4 @@
-import processing.core.*;
+/*import processing.core.*;
 import java.util.*;   // for ArrayList
 
 
@@ -26,4 +26,4 @@ public class Rotate extends PApplet
         PApplet.main("Rotate");
     }
 }
-
+*/
